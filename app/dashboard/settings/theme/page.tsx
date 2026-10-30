@@ -140,9 +140,10 @@ export default function ThemePage() {
                 {themes.find(t => t.mode === themeMode)?.description}
               </p>
             </div>
-            {React.createElement(themes.find(t => t.mode === themeMode)?.icon || Sun, {
-              className: `w-8 h-8 ${themes.find(t => t.mode === themeMode)?.iconColor}`
-            })}
+            {(() => {
+              const CurrentIcon = themes.find(t => t.mode === themeMode)?.icon || Sun
+              return <CurrentIcon className={`w-8 h-8 ${themes.find(t => t.mode === themeMode)?.iconColor}`} />
+            })()}
           </div>
         </div>
 
