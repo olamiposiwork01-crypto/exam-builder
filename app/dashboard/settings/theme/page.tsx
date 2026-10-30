@@ -5,6 +5,7 @@ import { Sun, Moon, Monitor, Palette, Check } from 'lucide-react'
 import { motion } from 'framer-motion'
 import toast from 'react-hot-toast'
 import { useTheme } from '@/components/ThemeProvider'
+import type { LucideIcon } from 'lucide-react'
 
 type ThemeMode = 'light' | 'dark' | 'system'
 type ColorScheme = 'blue' | 'purple' | 'green' | 'orange' | 'pink'
@@ -52,7 +53,14 @@ export default function ThemePage() {
     root.setAttribute('data-color-scheme', color)
   }
 
-  const themes = [
+  const themes: Array<{
+    mode: ThemeMode
+    name: string
+    description: string
+    icon: LucideIcon
+    preview: string
+    iconColor: string
+  }> = [
     {
       mode: 'light' as ThemeMode,
       name: 'Light Mode',
