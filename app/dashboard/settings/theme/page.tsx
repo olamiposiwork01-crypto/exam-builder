@@ -148,10 +148,11 @@ export default function ThemePage() {
                 {themes.find(t => t.mode === themeMode)?.description}
               </p>
             </div>
-            {(() => {
-              const CurrentIcon = themes.find(t => t.mode === themeMode)?.icon || Sun
-              return <CurrentIcon className={`w-8 h-8 ${themes.find(t => t.mode === themeMode)?.iconColor}`} />
-            })()}
+            <div>
+              {themeMode === 'light' && <Sun className="w-8 h-8 text-yellow-500" />}
+              {themeMode === 'dark' && <Moon className="w-8 h-8 text-blue-400" />}
+              {themeMode === 'system' && <Monitor className="w-8 h-8 text-purple-500" />}
+            </div>
           </div>
         </div>
 
