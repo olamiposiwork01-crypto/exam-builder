@@ -6,6 +6,10 @@ import { Share2, Link as LinkIcon, Eye, Edit3, Trash2, Copy, Check, UserPlus, X,
 import { motion, AnimatePresence } from 'framer-motion'
 import toast from 'react-hot-toast'
 
+// Force dynamic rendering
+export const dynamic = 'force-dynamic'
+export const revalidate = 0
+
 interface ShareLink {
   id: string
   permission: 'read' | 'edit'

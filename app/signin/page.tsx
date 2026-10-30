@@ -8,6 +8,10 @@ import { motion } from 'framer-motion'
 import toast from 'react-hot-toast'
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
 
+// Force dynamic rendering
+export const dynamic = 'force-dynamic'
+export const revalidate = 0
+
 export default function SignInPage() {
   const router = useRouter()
   const supabase = createClientComponentClient()

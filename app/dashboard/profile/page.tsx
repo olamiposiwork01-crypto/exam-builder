@@ -7,6 +7,10 @@ import { motion } from 'framer-motion'
 import toast from 'react-hot-toast'
 import { format } from 'date-fns'
 
+// Force dynamic rendering
+export const dynamic = 'force-dynamic'
+export const revalidate = 0
+
 export default function ProfilePage() {
   const supabase = createClientComponentClient()
   const [user, setUser] = useState<any>(null)

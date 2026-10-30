@@ -3,6 +3,10 @@
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
+
+// Force dynamic rendering
+export const dynamic = 'force-dynamic'
+export const revalidate = 0
 import { 
   Database, 
   Plus, 

@@ -6,6 +6,13 @@ const nextConfig = {
   experimental: {
     serverActions: true,
   },
+  // Force dynamic rendering for all routes
+  typescript: {
+    ignoreBuildErrors: false,
+  },
+  eslint: {
+    ignoreDuringBuilds: false,
+  },
 }
 
 module.exports = nextConfig
