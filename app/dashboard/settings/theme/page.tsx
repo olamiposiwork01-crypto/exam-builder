@@ -7,6 +7,9 @@ import toast from 'react-hot-toast'
 import { useTheme } from '@/components/ThemeProvider'
 import type { LucideIcon } from 'lucide-react'
 
+export const dynamic = 'force-dynamic'
+export const revalidate = 0
+
 type ThemeMode = 'light' | 'dark' | 'system'
 type ColorScheme = 'blue' | 'purple' | 'green' | 'orange' | 'pink'
 
