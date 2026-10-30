@@ -14,8 +14,10 @@ export default function ThemePage() {
   const { theme, toggleTheme } = useTheme()
   const [themeMode, setThemeMode] = useState<ThemeMode>('system')
   const [colorScheme, setColorScheme] = useState<ColorScheme>('blue')
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
+    setMounted(true)
     const savedMode = localStorage.getItem('themeMode') as ThemeMode || 'system'
     const savedColor = localStorage.getItem('colorScheme') as ColorScheme || 'blue'
     setThemeMode(savedMode)
