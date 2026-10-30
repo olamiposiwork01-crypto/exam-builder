@@ -31,6 +31,16 @@ export default function DashboardLayout({
   const [user, setUser] = useState<any>(null)
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const [settingsOpen, setSettingsOpen] = useState(false)
+  const [isDesktop, setIsDesktop] = useState(false)
+
+  useEffect(() => {
+    const checkDesktop = () => {
+      setIsDesktop(window.innerWidth >= 1024)
+    }
+    checkDesktop()
+    window.addEventListener('resize', checkDesktop)
+    return () => window.removeEventListener('resize', checkDesktop)
+  }, [])
 
   useEffect(() => {
     loadUser()
@@ -95,7 +105,7 @@ export default function DashboardLayout({
 
       {/* Sidebar */}
       <AnimatePresence>
-        {(sidebarOpen || window.innerWidth >= 1024) && (
+        {(sidebarOpen || isDesktop) && (
           <>
             {/* Overlay for mobile */}
             {sidebarOpen && (
