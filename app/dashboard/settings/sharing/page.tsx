@@ -2,9 +2,6 @@
 
 import { useState, useEffect } from 'react'
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
-
-export const dynamic = 'force-dynamic'
-export const revalidate = 0
 import { Share2, Link as LinkIcon, Eye, Edit3, Trash2, Copy, Check, UserPlus, X, ToggleLeft, ToggleRight } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import toast from 'react-hot-toast'
